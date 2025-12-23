@@ -11,13 +11,12 @@
         body, html {
             margin: 0;
             padding: 0;
-            background: #ff4500; /* EYE BLEED ORANGE */
+            background: #ff4500; 
             font-family: 'Comic Neue', 'Comic Sans MS', cursive;
             overflow-x: hidden;
-            cursor: url('https://findicons.com/files/icons/1110/froot_loops/128/toucan_sam.png'), auto;
         }
 
-        /* PRELOADER FROM HELL */
+        /* PRELOADER */
         #loader {
             position: fixed;
             width: 100%;
@@ -41,10 +40,10 @@
             letter-spacing: 10px;
         }
 
-        /* MAIN CHAOS */
+        /* MAIN CONTENT */
         #main-content {
             display: none;
-            background: url('meme1.jpg') no-repeat center center fixed;
+            background: url('meme1.png') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -64,19 +63,13 @@
             padding: 50px 20px;
         }
 
-        .glitch-container {
+        .video-container {
             position: relative;
             border: 20px ridge #8b4513;
             background: rgba(255, 255, 255, 0.8);
             max-width: 600px;
             padding: 20px;
             transform: rotate(-2deg);
-        }
-
-        .floating-assets {
-            position: absolute;
-            z-index: 5;
-            pointer-events: none;
         }
 
         .btn-container {
@@ -106,7 +99,6 @@
         .x { background: #000000; }
         .buy { background: #32cd32; animation: bounce 0.3s infinite; }
 
-        /* THE LORE SECTION */
         .lore-box {
             background: white;
             color: black;
@@ -129,7 +121,7 @@
         .meme-grid img {
             width: 100%;
             border: 5px solid white;
-            filter: contrast(150%);
+            filter: contrast(110%);
         }
 
         video {
@@ -149,7 +141,7 @@
 
         @keyframes shake {
             0% { transform: translate(1px, 1px) rotate(0deg); }
-            10px { transform: translate(-1px, -2px) rotate(-1deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
             20% { transform: translate(-3px, 0px) rotate(1deg); }
             100% { transform: translate(1px, -1px) rotate(0deg); }
         }
@@ -169,7 +161,7 @@
         </div>
 
         <div class="hero">
-            <div class="glitch-container">
+            <div class="video-container">
                 <video autoplay muted loop>
                     <source src="video1.mp4" type="video/mp4">
                 </video>
@@ -177,9 +169,9 @@
             </div>
 
             <div class="btn-container">
-                <a href="#" class="low-iq-btn tg">TELEGRAM 🛩️</a>
-                <a href="#" class="low-iq-btn x">X (TWITTER) 🪓</a>
-                <a href="#" class="low-iq-btn buy">BUY $GOB (FOUR.MEME) 💸</a>
+                <a href="https://t.me/seu_link" class="low-iq-btn tg">TELEGRAM</a>
+                <a href="https://x.com/seu_perfil" class="low-iq-btn x">X TWITTER</a>
+                <a href="https://four.meme/token/seu_token" class="low-iq-btn buy">BUY $GOB</a>
             </div>
         </div>
 
@@ -195,38 +187,37 @@
                 <span style="background: black; color: yellow;">NO ROADMAP. NO UTILITY. JUST GOBBLE.</span>
                 <br><br>
                 IF YOU DON'T BUY, YOU ARE A NUGGET. IF YOU BUY, YOU ARE THE CHEF. 
-                LFG 𓅭 𓅭 𓅭
+                LFG
             </p>
         </div>
 
         <div class="meme-grid">
-            <img src="meme3.jpg" alt="Eating You">
-            <img src="meme4.jpg" alt="High Bird">
-            <img src="meme2.jpg" alt="Elon Dinner">
-            <img src="meme6.jpg" alt="Lambo Bird">
-            <img src="meme5.jpg" alt="Crisis">
-            <img src="meme1.jpg" alt="Mona Gobble">
+            <img src="meme3.jpg" alt="Boxing Tyson">
+            <img src="meme3.png" alt="Eating Human">
+            <img src="meme4.png" alt="High Bird">
+            <img src="meme2.png" alt="Elon Dinner">
+            <img src="meme6.png" alt="Lambo Bird">
+            <img src="meme5.png" alt="Cooking Show Crisis">
+            <img src="meme1.png" alt="Mona Gobble">
         </div>
 
         <div style="text-align: center; padding: 100px; background: black; color: white;">
             <img src="logo.png" style="width: 300px; animation: spin 2s linear infinite;">
             <h1 style="font-size: 5rem;">$GOB IS ETERNAL</h1>
-            <p style="font-size: 0.5rem;">legal disclaimer: if you lose money you just got gobbled. its nature. darwinism is real. stay mad.</p>
+            <p style="font-size: 0.7rem;">legal disclaimer: if you lose money you just got gobbled. its nature. darwinism is real. stay mad.</p>
         </div>
     </div>
 
     <script>
-        // THE ONLY SMART THING HERE: THE LOADER
         setTimeout(function() {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
         }, 3000);
 
-        // RANDOM SHAKING TO KEEP THE BRAIN ACTIVE
         setInterval(() => {
             const colors = ['#ff4500', '#ffff00', '#00ff00', '#ff00ff', '#00ffff'];
             document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        }, 500);
+        }, 400);
     </script>
 </body>
 </html>
