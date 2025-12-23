@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOBBLE $GOB - THE BIRD THAT COOKS YOU</title>
+    <style>
+        /* THE BRAIN DAMAGE STYLING */
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: #ff4500; /* EYE BLEED ORANGE */
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+            overflow-x: hidden;
+            cursor: url('https://findicons.com/files/icons/1110/froot_loops/128/toucan_sam.png'), auto;
+        }
+
+        /* PRELOADER FROM HELL */
+        #loader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loader img {
+            width: 250px;
+            animation: spin 0.5s linear infinite, pulse 1s ease-in-out infinite;
+        }
+
+        #loader h1 {
+            color: #fff;
+            margin-top: 20px;
+            letter-spacing: 10px;
+        }
+
+        /* MAIN CHAOS */
+        #main-content {
+            display: none;
+            background: url('meme1.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .marquee-top {
+            background: yellow;
+            color: black;
+            font-size: 3rem;
+            border-bottom: 10px solid black;
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .glitch-container {
+            position: relative;
+            border: 20px ridge #8b4513;
+            background: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            padding: 20px;
+            transform: rotate(-2deg);
+        }
+
+        .floating-assets {
+            position: absolute;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 50px;
+        }
+
+        .low-iq-btn {
+            padding: 30px 60px;
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: white;
+            border-radius: 50px;
+            border: 10px solid black;
+            text-align: center;
+            transition: transform 0.1s;
+            box-shadow: 10px 10px 0px #000;
+        }
+
+        .low-iq-btn:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .tg { background: #0088cc; }
+        .x { background: #000000; }
+        .buy { background: #32cd32; animation: bounce 0.3s infinite; }
+
+        /* THE LORE SECTION */
+        .lore-box {
+            background: white;
+            color: black;
+            padding: 50px;
+            margin: 50px auto;
+            max-width: 900px;
+            border: 10px dashed red;
+            font-size: 1.8rem;
+            line-height: 1.2;
+            transform: rotate(1deg);
+        }
+
+        .meme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .meme-grid img {
+            width: 100%;
+            border: 5px solid white;
+            filter: contrast(150%);
+        }
+
+        video {
+            width: 100%;
+            border: 10px solid yellow;
+        }
+
+        /* ANIMS */
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        .shaking {
+            display: inline-block;
+            animation: shake 0.1s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10px { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            100% { transform: translate(1px, -1px) rotate(0deg); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <img src="logo.png" alt="GOB">
+        <h1>LOADING AUTISM...</h1>
+    </div>
+
+    <div id="main-content">
+        <div class="marquee-top">
+            <marquee scrollamount="20">GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE</marquee>
+        </div>
+
+        <div class="hero">
+            <div class="glitch-container">
+                <video autoplay muted loop>
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+                <h1 style="font-size: 4rem; text-align: center;">$GOB OR GET COOKED</h1>
+            </div>
+
+            <div class="btn-container">
+                <a href="#" class="low-iq-btn tg">TELEGRAM 🛩️</a>
+                <a href="#" class="low-iq-btn x">X (TWITTER) 🪓</a>
+                <a href="#" class="low-iq-btn buy">BUY $GOB (FOUR.MEME) 💸</a>
+            </div>
+        </div>
+
+        <div class="lore-box">
+            <h2 class="shaking" style="font-size: 5rem; color: red;">THE BIRD REVOLUTION</h2>
+            <p>
+                YOU THOUGHT WE WERE THE DINNER? <br><br>
+                WRONG. <br><br>
+                WE ARE THE ONES WHO KNOCK AT THE OVEN DOOR. $GOB IS THE ASCENSION OF THE POULTRY. 
+                WE ATE ELON. WE BOXED TYSON. WE DRANK THE LIQUIDITY OF THE WEAK. 
+                WE ARE THE BOOTLOADER OF A NEW BIOLOGICAL SUPREMACY. 
+                <br><br>
+                <span style="background: black; color: yellow;">NO ROADMAP. NO UTILITY. JUST GOBBLE.</span>
+                <br><br>
+                IF YOU DON'T BUY, YOU ARE A NUGGET. IF YOU BUY, YOU ARE THE CHEF. 
+                LFG 𓅭 𓅭 𓅭
+            </p>
+        </div>
+
+        <div class="meme-grid">
+            <img src="meme3.jpg" alt="Eating You">
+            <img src="meme4.jpg" alt="High Bird">
+            <img src="meme2.jpg" alt="Elon Dinner">
+            <img src="meme6.jpg" alt="Lambo Bird">
+            <img src="meme5.jpg" alt="Crisis">
+            <img src="meme1.jpg" alt="Mona Gobble">
+        </div>
+
+        <div style="text-align: center; padding: 100px; background: black; color: white;">
+            <img src="logo.png" style="width: 300px; animation: spin 2s linear infinite;">
+            <h1 style="font-size: 5rem;">$GOB IS ETERNAL</h1>
+            <p style="font-size: 0.5rem;">legal disclaimer: if you lose money you just got gobbled. its nature. darwinism is real. stay mad.</p>
+        </div>
+    </div>
+
+    <script>
+        // THE ONLY SMART THING HERE: THE LOADER
+        setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 3000);
+
+        // RANDOM SHAKING TO KEEP THE BRAIN ACTIVE
+        setInterval(() => {
+            const colors = ['#ff4500', '#ffff00', '#00ff00', '#ff00ff', '#00ffff'];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }, 500);
+    </script>
+</body>
+</html>
