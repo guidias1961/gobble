@@ -7,7 +7,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
-        /* RESET PROFISSIONAL */
+        /* RESET TOTAL PARA ELIMINAR ESPAÇOS EM BRANCO */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body, html {
@@ -16,21 +16,21 @@
             overflow-x: hidden;
             color: white;
             line-height: 1.2;
+            height: 100%;
         }
 
-        /* MASTER CONTAINER - FIXED BORDER CLIPPING */
+        /* WRAPPER AGORA É FULL WIDTH (100% DA TELA) */
         .wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-left: 5px solid #ff00ff;
-            border-right: 5px solid #00ffff;
+            width: 100%;
+            border-left: 8px solid #ff00ff; /* Bordas mais grossas para destaque */
+            border-right: 8px solid #00ffff;
             background: #080808;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* PRELOADER - BOOTLOADER VIBE */
+        /* PRELOADER */
         #loader {
             position: fixed;
             inset: 0;
@@ -44,11 +44,11 @@
         #loader img { width: 180px; animation: spin 0.4s linear infinite; }
         #loader h1 { color: #00ff00; margin-top: 20px; font-size: 1.5rem; text-align: center; }
 
-        /* HEADER / BANNER - NO CLIPPING */
+        /* BANNER FULL WIDTH - SEM CORTES NO TOPO */
         .banner-container {
             width: 100%;
-            background: #111;
-            line-height: 0; /* Removes bottom gap */
+            background: #000;
+            line-height: 0; 
             border-bottom: 8px solid #000;
         }
         .banner-container img {
@@ -60,91 +60,95 @@
         .marquee {
             background: #ff00ff;
             color: #fff;
-            padding: 15px 0;
-            font-size: 1.8rem;
+            padding: 20px 0;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 900;
             border-bottom: 8px solid #00ffff;
-            text-shadow: 2px 2px #000;
+            text-shadow: 3px 3px #000;
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION - OCUPANDO MAIS ESPAÇO NO DESKTOP */
         .hero {
             display: flex;
             flex-direction: column;
-            padding: 40px 20px;
+            padding: 40px;
             gap: 40px;
         }
         @media (min-width: 992px) {
-            .hero { flex-direction: row; align-items: center; padding: 60px; }
+            .hero { flex-direction: row; align-items: stretch; padding: 60px 80px; }
         }
 
         .video-box {
-            flex: 1;
-            border: 15px ridge #00ffff;
-            box-shadow: 15px 15px 0px #ff00ff;
+            flex: 1.5;
+            border: 20px ridge #00ffff;
+            box-shadow: 20px 20px 0px #ff00ff;
             background: #000;
             line-height: 0;
         }
         video { width: 100%; height: auto; display: block; }
 
         .cta-stack {
-            flex: 0.8;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            justify-content: center;
+            gap: 30px;
         }
 
         .gob-btn {
             display: block;
-            padding: 25px;
-            font-size: 2rem;
+            padding: 35px;
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
             text-decoration: none;
             color: white;
             text-align: center;
             font-weight: 900;
-            border: 6px solid #000;
-            box-shadow: 8px 8px 0px #000;
+            border: 8px solid #000;
+            box-shadow: 12px 12px 0px #000;
             transition: 0.1s;
             text-transform: uppercase;
         }
-        .gob-btn:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px #000; }
+        .gob-btn:hover { transform: translate(-6px, -6px); box-shadow: 18px 18px 0px #000; }
         .tg { background: #0088cc; }
         .x { background: #000; border-color: #333; }
         .buy { background: #00ff00; color: #000 !important; animation: pulse-btn 1s infinite; }
 
-        /* LORE - THE PULSECHAIN THANKSGIVING */
+        /* LORE SECTION - FULL WIDTH BACKGROUND */
         .lore-section {
-            margin: 40px 20px;
+            width: 100%;
             position: relative;
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('meme1.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 60px 30px;
-            border: 10px double #00ffff;
-            box-shadow: -15px 15px 0px #ff00ff;
+            padding: 100px 40px;
+            border-top: 10px double #00ffff;
+            border-bottom: 10px double #ff00ff;
         }
         .lore-section h2 { 
             color: #ff00ff; 
-            font-size: clamp(2.2rem, 6vw, 4.5rem); 
-            margin-bottom: 30px; 
+            font-size: clamp(3rem, 8vw, 6rem); 
+            margin-bottom: 40px; 
             text-transform: uppercase;
-            -webkit-text-stroke: 1px #fff;
+            -webkit-text-stroke: 2px #fff;
+            text-align: center;
         }
         .lore-section p { 
-            font-size: clamp(1.1rem, 3vw, 1.8rem); 
-            max-width: 800px; 
+            font-size: clamp(1.4rem, 4vw, 2.2rem); 
+            max-width: 1200px; 
+            margin: 0 auto;
             color: #fff; 
             font-weight: bold;
+            text-align: center;
         }
-        .highlight { color: #00ff00; background: #000; padding: 0 5px; }
+        .highlight { color: #00ff00; background: #000; padding: 0 10px; }
 
-        /* GRID - SYMMETRY 4x2 */
+        /* MEME GRID - OCUPANDO TODO O ESPAÇO LATERAL */
         .meme-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 20px;
+            gap: 0; /* Removido gap para arte total */
+            width: 100%;
         }
         @media (min-width: 768px) {
             .meme-grid { grid-template-columns: repeat(4, 1fr); }
@@ -153,23 +157,23 @@
             width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
-            border: 6px solid #1a1a1a;
-            transition: 0.2s;
+            border: 4px solid #000; /* Bordas internas pretas para estilo quadrinhos */
+            transition: 0.3s;
             display: block;
         }
-        .meme-grid img:hover { border-color: #00ff00; transform: scale(1.03); }
+        .meme-grid img:hover { filter: contrast(150%); transform: scale(0.98); }
 
+        /* FOOTER CORRIGIDO PARA O FUNDO */
         footer {
             text-align: center;
-            padding: 80px 20px;
-            border-top: 10px solid #ff00ff;
+            padding: 100px 20px;
             background: #000;
             margin-top: auto;
         }
-        .footer-logo { width: 150px; animation: spin 5s linear infinite; margin-bottom: 20px; }
+        .footer-logo { width: 200px; animation: spin 5s linear infinite; margin-bottom: 30px; }
 
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes pulse-btn { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
+        @keyframes pulse-btn { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
 
     </style>
 </head>
@@ -186,7 +190,7 @@
         </header>
 
         <div class="marquee">
-            <marquee scrollamount="15">PULSECHAIN TRENCHES RESURRECTED --- $GOB IS THE FEAST --- NO MORE ROASTED BAGS --- GOBBLE OR GET GOBBLED ---</marquee>
+            <marquee scrollamount="20">PULSECHAIN TRENCHES RESURRECTED --- $GOB IS THE FEAST --- NO MORE ROASTED BAGS --- GOBBLE OR GET GOBBLED ---</marquee>
         </div>
 
         <main class="hero">
@@ -226,8 +230,8 @@
 
         <footer>
             <img src="logo.png" class="footer-logo">
-            <h1 style="font-size: 4rem; text-shadow: 3px 3px #ff00ff;">$GOB</h1>
-            <p style="opacity: 0.6; margin-top: 15px;">Darwinism is the only law. PulseChain is the only home.</p>
+            <h1 style="font-size: clamp(3rem, 10vw, 6rem); text-shadow: 5px 5px #ff00ff;">$GOB</h1>
+            <p style="opacity: 0.6; margin-top: 20px; font-size: 1.2rem;">Darwinism is the only law. PulseChain is the only home.</p>
         </footer>
     </div>
 
