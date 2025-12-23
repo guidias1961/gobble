@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOBBLE $GOB - THE BIRD THAT COOKS YOU</title>
+    <title>GOBBLE $GOB - THE BIRD THAT COOKS YOU (PULSECHAIN EDITION)</title>
     <style>
-        /* THE BRAIN DAMAGE STYLING */
+        /* THE BRAIN DAMAGE STYLING - PULSECHAIN CHAOS */
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
         body, html {
@@ -14,9 +14,10 @@
             background: #ff4500; 
             font-family: 'Comic Neue', 'Comic Sans MS', cursive;
             overflow-x: hidden;
+            color: white;
         }
 
-        /* PRELOADER */
+        /* PRELOADER - HARNESSING THE AUTISM */
         #loader {
             position: fixed;
             width: 100%;
@@ -31,119 +32,140 @@
 
         #loader img {
             width: 250px;
-            animation: spin 0.5s linear infinite, pulse 1s ease-in-out infinite;
+            animation: spin 0.2s linear infinite, pulse 0.5s ease-in-out infinite;
         }
 
         #loader h1 {
-            color: #fff;
+            color: #00ff00;
             margin-top: 20px;
-            letter-spacing: 10px;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px #ff00ff;
         }
 
         /* MAIN CONTENT */
         #main-content {
             display: none;
-            background: url('meme1.png') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(45deg, #000000 25%, #1a1a1a 25%, #1a1a1a 50%, #000000 50%, #000000 75%, #1a1a1a 75%, #1a1a1a 100%);
+            background-size: 100px 100px;
         }
 
         .marquee-top {
-            background: yellow;
-            color: black;
-            font-size: 3rem;
-            border-bottom: 10px solid black;
+            background: #ff00ff; /* PulseChain Pink */
+            color: white;
+            font-size: 3.5rem;
+            border-bottom: 15px solid #00ffff;
             padding: 10px 0;
             font-weight: bold;
+            text-shadow: 4px 4px 0px #000;
         }
 
         .hero {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             padding: 50px 20px;
         }
 
         .video-container {
             position: relative;
-            border: 20px ridge #8b4513;
-            background: rgba(255, 255, 255, 0.8);
+            border: 25px ridge #00ffff;
+            background: #000;
             max-width: 600px;
-            padding: 20px;
-            transform: rotate(-2deg);
+            padding: 10px;
+            transform: rotate(-1deg);
+            box-shadow: 20px 20px 0px #ff00ff;
         }
 
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
             margin: 50px;
         }
 
         .low-iq-btn {
-            padding: 30px 60px;
-            font-size: 2.5rem;
+            padding: 25px 50px;
+            font-size: 2.8rem;
             text-decoration: none;
             color: white;
-            border-radius: 50px;
-            border: 10px solid black;
+            border-radius: 0px;
+            border: 8px solid black;
             text-align: center;
-            transition: transform 0.1s;
-            box-shadow: 10px 10px 0px #000;
+            transition: all 0.05s;
+            box-shadow: 12px 12px 0px #000;
+            font-weight: 900;
         }
 
         .low-iq-btn:hover {
-            transform: scale(1.2) rotate(5deg);
+            transform: scale(1.1) rotate(-3deg);
+            filter: invert(1);
         }
 
         .tg { background: #0088cc; }
         .x { background: #000000; }
-        .buy { background: #32cd32; animation: bounce 0.3s infinite; }
+        .buy { 
+            background: #00ff00; 
+            color: black !important;
+            animation: jitter 0.1s infinite; 
+        }
 
         .lore-box {
             background: white;
             color: black;
-            padding: 50px;
-            margin: 50px auto;
-            max-width: 900px;
-            border: 10px dashed red;
-            font-size: 1.8rem;
-            line-height: 1.2;
+            padding: 60px;
+            margin: 60px auto;
+            max-width: 1000px;
+            border: 15px solid #ff00ff;
+            font-size: 2rem;
+            line-height: 1.1;
             transform: rotate(1deg);
+            box-shadow: -20px 20px 0px #00ffff;
         }
 
         .meme-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 10px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 40px;
+            background: #00ffff;
         }
 
         .meme-grid img {
             width: 100%;
-            border: 5px solid white;
-            filter: contrast(110%);
+            border: 8px solid black;
+            filter: saturate(200%) contrast(120%);
         }
 
-        video {
+        video, .main-img {
             width: 100%;
-            border: 10px solid yellow;
+            border: 5px solid white;
         }
 
         /* ANIMS */
         @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); } }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        @keyframes jitter {
+            0% { transform: translate(2px, 2px); }
+            50% { transform: translate(-2px, -2px); }
+            100% { transform: translate(2px, -2px); }
+        }
 
         .shaking {
             display: inline-block;
-            animation: shake 0.1s infinite;
+            animation: shake 0.2s infinite;
         }
 
         @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            100% { transform: translate(1px, -1px) rotate(0deg); }
+            0% { transform: translate(2px, 2px) rotate(0deg); }
+            20% { transform: translate(-2px, -3px) rotate(-2deg); }
+            40% { transform: translate(-4px, 1px) rotate(2deg); }
+            100% { transform: translate(2px, -2px) rotate(0deg); }
+        }
+
+        .pls-logo {
+            width: 100px;
+            vertical-align: middle;
         }
 
     </style>
@@ -151,73 +173,72 @@
 <body>
 
     <div id="loader">
-        <img src="logo.png" alt="GOB">
-        <h1>LOADING AUTISM...</h1>
+        <img src="https://i.ibb.co/vzR0y6L/peru-logo.png" alt="GOB">
+        <h1>BOOTLOADING BIOLOGICAL SUPREMACY...</h1>
+        <p style="color: white;">F*CK THE OVEN. WE ARE THE FIRE.</p>
     </div>
 
     <div id="main-content">
         <div class="marquee-top">
-            <marquee scrollamount="20">GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE GOBBLE</marquee>
+            <marquee scrollamount="30">PULSECHAIN ASCENSION --- $GOB ON PUMP.TIRES --- NO ROADMAP --- JUST GOBBLE --- BUY OR BE DINNER --- </marquee>
         </div>
 
         <div class="hero">
             <div class="video-container">
-                <video autoplay muted loop>
-                    <source src="video1.mp4" type="video/mp4">
-                </video>
-                <h1 style="font-size: 4rem; text-align: center;">$GOB OR GET COOKED</h1>
+                <img src="https://i.ibb.co/vzR0y6L/peru-logo.png" class="main-img" alt="THE GOB">
+                <h1 style="font-size: 5rem; text-align: center; color: #ff00ff; -webkit-text-stroke: 2px black;">$GOB</h1>
+                <p style="text-align: center; font-size: 1.5rem; background: yellow; color: black;">PULSECHAIN'S HIGHEST IQ LOW-IQ PLAY</p>
             </div>
 
             <div class="btn-container">
-                <a href="https://t.me/seu_link" class="low-iq-btn tg">TELEGRAM</a>
-                <a href="https://x.com/seu_perfil" class="low-iq-btn x">X TWITTER</a>
-                <a href="https://four.meme/token/seu_token" class="low-iq-btn buy">BUY $GOB</a>
+                <a href="https://t.me/seu_link" target="_blank" class="low-iq-btn tg">TELEGRAM</a>
+                <a href="https://x.com/seu_perfil" target="_blank" class="low-iq-btn x">X / TWITTER</a>
+                <a href="https://pump.tires/token/seu_token" target="_blank" class="low-iq-btn buy">BUY ON PUMP.TIRES</a>
             </div>
         </div>
 
         <div class="lore-box">
-            <h2 class="shaking" style="font-size: 5rem; color: red;">THE BIRD REVOLUTION</h2>
+            <h2 class="shaking" style="font-size: 5.5rem; color: red; text-transform: uppercase;">The Bird Revolution</h2>
             <p>
                 YOU THOUGHT WE WERE THE DINNER? <br><br>
-                WRONG. <br><br>
-                WE ARE THE ONES WHO KNOCK AT THE OVEN DOOR. $GOB IS THE ASCENSION OF THE POULTRY. 
-                WE ATE ELON. WE BOXED TYSON. WE DRANK THE LIQUIDITY OF THE WEAK. 
-                WE ARE THE BOOTLOADER OF A NEW BIOLOGICAL SUPREMACY. 
+                <span style="font-size: 3.5rem; color: #ff00ff;">WRONG.</span> <br><br>
+                WE ARE THE ONES WHO KNOCK AT THE OVEN DOOR. $GOB IS THE EVOLUTIONARY UPGRADE OF THE POULTRY SOFTWARE. <br><br>
+                WE ATE THE BANNERS. WE DRANK THE LIQUIDITY. WE ARE THE <span style="background: black; color: #00ff00;">BOOTLOADER</span> OF A NEW BIOLOGICAL SUPREMACY ON THE <span style="color: #ff00ff;">PULSECHAIN</span>.
                 <br><br>
-                <span style="background: black; color: yellow;">NO ROADMAP. NO UTILITY. JUST GOBBLE.</span>
+                <span style="background: yellow; color: black; padding: 10px;">DARWINISM IS REAL: IF YOU DON'T GOBBLE, YOU GET GOBBLED.</span>
                 <br><br>
-                IF YOU DON'T BUY, YOU ARE A NUGGET. IF YOU BUY, YOU ARE THE CHEF. 
-                LFG
+                NO UTILITY. NO VESTING. JUST CHAOS AND SUPERIOR GAINS.
+                <br><br>
+                LFG.
             </p>
         </div>
 
         <div class="meme-grid">
-            <img src="meme3.jpg" alt="Boxing Tyson">
-            <img src="meme3.png" alt="Eating Human">
-            <img src="meme4.png" alt="High Bird">
-            <img src="meme2.png" alt="Elon Dinner">
-            <img src="meme6.png" alt="Lambo Bird">
-            <img src="meme5.png" alt="Cooking Show Crisis">
-            <img src="meme1.png" alt="Mona Gobble">
+            <div style="background: black; padding: 10px; border: 4px solid white; color: white; text-align: center;">[MEME: $GOB BOXING TYSON]</div>
+            <div style="background: black; padding: 10px; border: 4px solid white; color: white; text-align: center;">[MEME: $GOB EATING ELON]</div>
+            <div style="background: black; padding: 10px; border: 4px solid white; color: white; text-align: center;">[MEME: $GOB DRIVING LAMBO]</div>
+            <div style="background: black; padding: 10px; border: 4px solid white; color: white; text-align: center;">[MEME: $GOB AS RICHARD HEART]</div>
         </div>
 
-        <div style="text-align: center; padding: 100px; background: black; color: white;">
-            <img src="logo.png" style="width: 300px; animation: spin 2s linear infinite;">
-            <h1 style="font-size: 5rem;">$GOB IS ETERNAL</h1>
-            <p style="font-size: 0.7rem;">legal disclaimer: if you lose money you just got gobbled. its nature. darwinism is real. stay mad.</p>
+        <div style="text-align: center; padding: 100px; background: #000; color: white; border-top: 20px solid #ff00ff;">
+            <img src="https://i.ibb.co/vzR0y6L/peru-logo.png" style="width: 250px; animation: spin 5s linear infinite;">
+            <h1 style="font-size: 6rem; color: #00ffff;">$GOB IS ETERNAL</h1>
+            <p style="font-size: 1rem; opacity: 0.5;">Legal Disclaimer: PulseChain is volatile. $GOB is a meme. If you lose your money, you were a nugget. Darwinism doesn't care about your feelings. Stay mad or stay Gobbling.</p>
         </div>
     </div>
 
     <script>
+        // LOADER TIMEOUT
         setTimeout(function() {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
-        }, 3000);
+        }, 2500);
 
+        // BRAIN DAMAGE BACKGROUND JITTER
         setInterval(() => {
-            const colors = ['#ff4500', '#ffff00', '#00ff00', '#ff00ff', '#00ffff'];
+            const colors = ['#ff4500', '#ff00ff', '#00ff00', '#ffff00', '#00ffff', '#ff0000'];
             document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        }, 400);
+        }, 300);
     </script>
 </body>
 </html>
