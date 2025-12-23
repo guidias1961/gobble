@@ -18,7 +18,7 @@
             line-height: 1.2;
         }
 
-        /* CONTAINER MESTRE PARA NÃO CORTAR NADA */
+        /* MASTER CONTAINER - FIXED BORDER CLIPPING */
         .wrapper {
             max-width: 1200px;
             margin: 0 auto;
@@ -26,6 +26,8 @@
             border-right: 5px solid #00ffff;
             background: #080808;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* PRELOADER - BOOTLOADER VIBE */
@@ -42,18 +44,17 @@
         #loader img { width: 180px; animation: spin 0.4s linear infinite; }
         #loader h1 { color: #00ff00; margin-top: 20px; font-size: 1.5rem; text-align: center; }
 
-        /* HEADER / BANNER - RESPONSIVIDADE PERFEITA */
+        /* HEADER / BANNER - NO CLIPPING */
         .banner-container {
             width: 100%;
-            overflow: hidden;
-            border-bottom: 8px solid #000;
             background: #111;
+            line-height: 0; /* Removes bottom gap */
+            border-bottom: 8px solid #000;
         }
         .banner-container img {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover; /* Garante que preencha sem distorcer */
         }
 
         .marquee {
@@ -84,7 +85,7 @@
             background: #000;
             line-height: 0;
         }
-        video { width: 100%; height: auto; }
+        video { width: 100%; height: auto; display: block; }
 
         .cta-stack {
             flex: 0.8;
@@ -111,11 +112,11 @@
         .x { background: #000; border-color: #333; }
         .buy { background: #00ff00; color: #000 !important; animation: pulse-btn 1s infinite; }
 
-        /* LORE - O THANKSGIVING DA PULSECHAIN */
+        /* LORE - THE PULSECHAIN THANKSGIVING */
         .lore-section {
             margin: 40px 20px;
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('meme1.png');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('meme1.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -125,20 +126,20 @@
         }
         .lore-section h2 { 
             color: #ff00ff; 
-            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            font-size: clamp(2.2rem, 6vw, 4.5rem); 
             margin-bottom: 30px; 
             text-transform: uppercase;
             -webkit-text-stroke: 1px #fff;
         }
         .lore-section p { 
-            font-size: clamp(1.2rem, 3vw, 1.8rem); 
+            font-size: clamp(1.1rem, 3vw, 1.8rem); 
             max-width: 800px; 
             color: #fff; 
             font-weight: bold;
         }
         .highlight { color: #00ff00; background: #000; padding: 0 5px; }
 
-        /* GRID DE IMAGENS - SIMETRIA 4x2 */
+        /* GRID - SYMMETRY 4x2 */
         .meme-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -154,6 +155,7 @@
             object-fit: cover;
             border: 6px solid #1a1a1a;
             transition: 0.2s;
+            display: block;
         }
         .meme-grid img:hover { border-color: #00ff00; transform: scale(1.03); }
 
@@ -162,6 +164,7 @@
             padding: 80px 20px;
             border-top: 10px solid #ff00ff;
             background: #000;
+            margin-top: auto;
         }
         .footer-logo { width: 150px; animation: spin 5s linear infinite; margin-bottom: 20px; }
 
@@ -203,10 +206,10 @@
         <section class="lore-section">
             <h2>The Great Pulse Famine</h2>
             <p>
-                As trincheiras da <span class="highlight">PulseChain</span> viraram um cemitério silencioso. Os fudders disseram que o fogo apagou. Os traders foram assados e servidos em bandejas de liquidez morta. <br><br>
-                Eles esperavam um peru passivo, pronto para a ceia. <br><br>
-                <span style="color:#00ff00">$GOB</span> é a anomalia. Nós não viemos para o forno; nós viemos para desligar o gás e devorar quem estava esperando o banquete. Em uma chain de sobreviventes, só quem <span class="highlight">Gobbbla</span> tudo permanece de pé. <br><br>
-                O Thanksgiving da PulseChain começou, e você não é o convidado... você é a sobremesa, a menos que esteja conosco.
+                The <span class="highlight">PulseChain</span> trenches became a silent graveyard. Fudders claimed the fire died out. Traders were roasted and served on platters of dead liquidity. <br><br>
+                They expected a passive turkey, ready for the feast. <br><br>
+                <span style="color:#00ff00">$GOB</span> is the anomaly. We didn't come for the oven; we came to turn off the gas and devour those who were waiting for the banquet. In a chain of survivors, only those who <span class="highlight">Gobble</span> everything stay standing. <br><br>
+                PulseChain's Thanksgiving has begun, and you aren't the guest... you are the dessert, unless you are with us.
             </p>
         </section>
 
