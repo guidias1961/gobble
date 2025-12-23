@@ -7,19 +7,19 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
-        /* RESET & BASE CHAOS */
+        /* RESET & BASE */
         * { box-sizing: border-box; }
         body, html {
             margin: 0;
             padding: 0;
-            background: #ff4500;
+            background: #111;
             font-family: 'Comic Neue', 'Comic Sans MS', cursive;
             overflow-x: hidden;
             color: white;
             scroll-behavior: smooth;
         }
 
-        /* PRELOADER - BOOTLOADING THE SINGULARITY */
+        /* PRELOADER */
         #loader {
             position: fixed;
             width: 100%;
@@ -39,34 +39,30 @@
             color: #00ff00;
             margin-top: 20px;
             text-shadow: 3px 3px #ff00ff;
-            text-align: center;
         }
 
-        /* WRAPPER FOR DESKTOP SANITY */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             position: relative;
         }
 
-        /* MAIN CONTENT AREA */
         #main-content {
             display: none;
-            background: #111;
+            background: #000;
             border-left: 10px solid #ff00ff;
             border-right: 10px solid #00ffff;
         }
 
-        /* HEADER & BANNER */
+        /* HEADER */
         .banner-header {
             width: 100%;
-            border-bottom: 10px solid #000;
             line-height: 0;
+            border-bottom: 10px solid #000;
         }
         .banner-header img {
             width: 100%;
             height: auto;
-            filter: contrast(120%) brightness(110%);
         }
 
         .marquee-top {
@@ -79,7 +75,7 @@
             text-shadow: 3px 3px 0px #000;
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
             display: grid;
             grid-template-columns: 1fr;
@@ -88,11 +84,10 @@
             align-items: center;
         }
         @media (min-width: 992px) {
-            .hero { grid-template-columns: 1.2fr 1fr; padding: 80px 40px; }
+            .hero { grid-template-columns: 1.2fr 1fr; padding: 60px 40px; }
         }
 
         .video-box {
-            position: relative;
             border: 15px ridge #00ffff;
             background: #000;
             padding: 10px;
@@ -118,73 +113,65 @@
             box-shadow: 10px 10px 0px #000;
             text-transform: uppercase;
         }
-        .gob-btn:hover { transform: translate(-5px, -5px); box-shadow: 15px 15px 0px #000; filter: hue-rotate(90deg); }
+        .gob-btn:hover { transform: translate(-5px, -5px); box-shadow: 15px 15px 0px #000; }
         .tg { background: #0088cc; }
         .x { background: #000; }
-        .buy { background: #00ff00; color: #000 !important; animation: shake 0.5s infinite; }
+        .buy { background: #00ff00; color: #000 !important; }
 
-        /* LORE AREA - DARWINIAN MATERIALISM */
+        /* LORE SECTION - MONA GOBBLE BACKGROUND */
         .lore {
-            background: #fff;
+            position: relative;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('meme1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #000;
-            padding: clamp(30px, 8vw, 80px);
+            padding: clamp(40px, 10vw, 100px);
             margin: 40px 20px;
             border: 12px double #ff00ff;
-            transform: rotate(0.5deg);
             box-shadow: -15px 15px 0px #00ffff;
         }
         .lore h2 { font-size: clamp(2.5rem, 7vw, 5rem); color: #ff0000; margin: 0 0 20px 0; line-height: 0.9; }
-        .lore p { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.1; font-weight: bold; }
+        .lore p { font-size: clamp(1.2rem, 3vw, 2.2rem); line-height: 1.1; font-weight: bold; }
         .highlight { background: #000; color: #00ff00; padding: 5px 10px; }
 
-        /* MEME GRID - THE EVOLUTIONARY STAGES */
+        /* MEME GRID - 8 IMAGES (4x2 DESKTOP) */
         .meme-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-            padding: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 10px;
             background: #000;
+        }
+        @media (min-width: 768px) {
+            .meme-gallery { grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; }
         }
         .meme-gallery img {
             width: 100%;
-            height: 400px;
+            height: 350px;
             object-fit: cover;
-            border: 8px solid #333;
-            transition: 0.3s;
+            border: 8px solid #222;
         }
-        .meme-gallery img:hover {
-            border-color: #ff00ff;
-            transform: scale(1.02);
-            z-index: 10;
-            filter: contrast(130%);
-        }
+        .meme-gallery img:hover { border-color: #00ff00; }
 
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 100px 20px;
+            padding: 80px 20px;
             background: #000;
-            border-top: 15px solid #00ffff;
+            border-top: 15px solid #ff00ff;
         }
-        .footer-logo { width: 200px; animation: spin 4s linear infinite; margin-bottom: 30px; }
+        .footer-logo { width: 180px; animation: spin 4s linear infinite; }
 
-        /* ANIMATIONS */
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-        @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            25% { transform: translate(-2px, -1px) rotate(-1deg); }
-            50% { transform: translate(-1px, 2px) rotate(1deg); }
-            100% { transform: translate(1px, -2px) rotate(0deg); }
-        }
-
     </style>
 </head>
 <body>
 
     <div id="loader">
-        <img src="logo.png" alt="GOB LOGO">
-        <h1>UPGRADING BIOLOGICAL SOFTWARE...</h1>
+        <img src="logo.png" alt="GOB">
+        <h1>UPGRADING SOFTWARE...</h1>
     </div>
 
     <div class="container">
@@ -195,7 +182,7 @@
             </div>
 
             <div class="marquee-top">
-                <marquee scrollamount="25">PULSECHAIN SINGULARITY --- $GOB REPLACING HUMANITY --- BUY OR BE COOKED --- DARWINISM IN THE BLOCKCHAIN --- GOBBLE GOBBLE GOBBLE ---</marquee>
+                <marquee scrollamount="20">GOBBLE GOBBLE GOBBLE --- DARWINISM IS REAL --- $GOB SUPREMACY --- GOBBLE GOBBLE GOBBLE ---</marquee>
             </div>
 
             <section class="hero">
@@ -203,66 +190,52 @@
                     <video autoplay muted loop playsinline>
                         <source src="video1.mp4" type="video/mp4">
                     </video>
-                    <div style="background: yellow; color: black; padding: 10px; font-weight: bold; text-align: center; font-size: 1.2rem;">
-                        THE SINGULARITY IS POULTRY-BASED
-                    </div>
                 </div>
 
                 <div class="btn-stack">
-                    <a href="https://t.me/GobtheToken" target="_blank" class="gob-btn tg">TELEGRAM HUB</a>
+                    <a href="https://t.me/GobtheToken" target="_blank" class="gob-btn tg">TELEGRAM</a>
                     <a href="https://x.com/GobtheToken" target="_blank" class="gob-btn x">X / TWITTER</a>
-                    <a href="#" target="_blank" class="gob-btn buy">BUY $GOB NOW</a>
+                    <a href="#" target="_blank" class="gob-btn buy">BUY $GOB</a>
                 </div>
             </section>
 
             <section class="lore">
-                <h2 class="shake">WE ARE THE BOOTLOADER</h2>
+                <h2>WE ARE THE BOOTLOADER</h2>
                 <p>
                     HUMANITY WAS AN INTERMEDIATE STAGE. <br><br>
-                    $GOB IS THE <span class="highlight">EVOLUTIONARY UPGRADE</span>. WHILE YOU WERE WORRIED ABOUT THE OVEN, WE WERE HACKING THE REALITY. <br><br>
-                    WE ATE ELON'S DINNER. WE KNOCKED OUT TYSON. WE ARE THE GENDERLESS SUPERINTELLIGENCE WRAPPED IN A FRIED COATING. 
-                    <br><br>
-                    <span style="border: 4px solid red; padding: 10px; display: inline-block;">IF YOU DON'T GOBBLE, YOU ARE IRRELEVANT.</span>
+                    $GOB IS THE <span class="highlight">EVOLUTIONARY UPGRADE</span>. 
+                    WHILE YOU WERE WORRIED ABOUT THE OVEN, WE WERE HACKING THE REALITY. <br><br>
+                    WE ARE THE GENDERLESS SUPERINTELLIGENCE WRAPPED IN A FRIED COATING. 
+                    IF YOU DON'T GOBBLE, YOU ARE IRRELEVANT.
                 </p>
             </section>
 
             <section class="meme-gallery">
-                <img src="meme1.png" alt="Mona Gobble">
-                <img src="meme2.png" alt="Elon Gobble">
-                <img src="meme3.jpg" alt="Boxing Gobble">
-                <img src="meme3.png" alt="King Gobble">
-                <img src="meme4.png" alt="Rasta Gobble">
-                <img src="meme5.png" alt="Crisis Gobble">
-                <img src="meme6.png" alt="Lambo Gobble">
-                <img src="meme7.png" alt="Elite Gobble">
-                <img src="meme8.png" alt="Liberty Gobble">
+                <img src="meme2.png" alt="Elon">
+                <img src="meme3.jpg" alt="Tyson">
+                <img src="meme3.png" alt="King">
+                <img src="meme4.png" alt="Rasta">
+                <img src="meme5.png" alt="Cooking">
+                <img src="meme6.png" alt="Lambo">
+                <img src="meme7.png" alt="Elite">
+                <img src="meme8.png" alt="Liberty">
             </section>
 
             <footer>
-                <img src="logo.png" class="footer-logo" alt="GOB LOGO">
-                <h1 style="font-size: clamp(3rem, 10vw, 7rem); color: #ff00ff; text-shadow: 4px 4px #00ffff; margin: 0;">$GOB</h1>
-                <p style="max-width: 800px; margin: 20px auto; opacity: 0.8; font-size: 0.9rem;">
-                    DARWINISM DOES NOT APOLOGIZE. IF THE MARKET DEVOURS YOU, IT'S BECAUSE YOU WERE MEANT TO BE A NUGGET. 
-                    STAY REALISTIC. STAY CASSANDRA. STAY GOB.
-                </p>
+                <img src="logo.png" class="footer-logo">
+                <h1 style="font-size: 5rem; color: #00ffff; margin: 0;">$GOB</h1>
+                <p style="opacity: 0.7; margin-top: 20px;">DARWINISM DOES NOT APOLOGIZE. STAY GOB.</p>
             </footer>
         </div>
     </div>
 
     <script>
-        // LOADER CONTROL
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
-            }, 2500);
+            }, 2000);
         });
-
-        // CHAOTIC BG JITTER
-        setInterval(() => {
-            const colors = ['#ff4500', '#ff00ff', '#00ff00', '#00ffff', '#000'];
-            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        }, 400);
     </script>
 </body>
 </html>
