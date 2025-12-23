@@ -3,238 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOBBLE $GOB - THE BIRD THAT COOKS YOU</title>
+    <title>GOBBLE $GOB - THE RESURRECTION OF THE TRENCHES</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
-        /* RESET & BASE */
-        * { box-sizing: border-box; }
+        /* RESET PROFISSIONAL */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body, html {
-            margin: 0;
-            padding: 0;
-            background: #111;
+            background: #000;
             font-family: 'Comic Neue', 'Comic Sans MS', cursive;
             overflow-x: hidden;
             color: white;
-            scroll-behavior: smooth;
+            line-height: 1.2;
         }
 
-        /* PRELOADER */
+        /* CONTAINER MESTRE PARA NÃO CORTAR NADA */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-left: 5px solid #ff00ff;
+            border-right: 5px solid #00ffff;
+            background: #080808;
+            min-height: 100vh;
+        }
+
+        /* PRELOADER - BOOTLOADER VIBE */
         #loader {
             position: fixed;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: #000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
+            z-index: 10000;
         }
-        #loader img {
-            width: 250px;
-            animation: spin 0.3s linear infinite, pulse 0.6s ease-in-out infinite;
-        }
-        #loader h1 {
-            color: #00ff00;
-            margin-top: 20px;
-            text-shadow: 3px 3px #ff00ff;
-        }
+        #loader img { width: 180px; animation: spin 0.4s linear infinite; }
+        #loader h1 { color: #00ff00; margin-top: 20px; font-size: 1.5rem; text-align: center; }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        #main-content {
-            display: none;
-            background: #000;
-            border-left: 10px solid #ff00ff;
-            border-right: 10px solid #00ffff;
-        }
-
-        /* HEADER */
-        .banner-header {
+        /* HEADER / BANNER - RESPONSIVIDADE PERFEITA */
+        .banner-container {
             width: 100%;
-            line-height: 0;
-            border-bottom: 10px solid #000;
+            overflow: hidden;
+            border-bottom: 8px solid #000;
+            background: #111;
         }
-        .banner-header img {
+        .banner-container img {
             width: 100%;
             height: auto;
+            display: block;
+            object-fit: cover; /* Garante que preencha sem distorcer */
         }
 
-        .marquee-top {
+        .marquee {
             background: #ff00ff;
-            color: white;
-            font-size: clamp(1.5rem, 5vw, 3rem);
-            border-bottom: 10px solid #00ffff;
-            padding: 10px 0;
-            font-weight: bold;
-            text-shadow: 3px 3px 0px #000;
+            color: #fff;
+            padding: 15px 0;
+            font-size: 1.8rem;
+            font-weight: 900;
+            border-bottom: 8px solid #00ffff;
+            text-shadow: 2px 2px #000;
         }
 
-        /* HERO */
+        /* HERO SECTION */
         .hero {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             padding: 40px 20px;
-            gap: 30px;
-            align-items: center;
+            gap: 40px;
         }
         @media (min-width: 992px) {
-            .hero { grid-template-columns: 1.2fr 1fr; padding: 60px 40px; }
+            .hero { flex-direction: row; align-items: center; padding: 60px; }
         }
 
         .video-box {
+            flex: 1;
             border: 15px ridge #00ffff;
-            background: #000;
-            padding: 10px;
-            transform: rotate(-1deg);
             box-shadow: 15px 15px 0px #ff00ff;
+            background: #000;
+            line-height: 0;
         }
-        video { width: 100%; border: 4px solid white; display: block; }
+        video { width: 100%; height: auto; }
 
-        .btn-stack {
+        .cta-stack {
+            flex: 0.8;
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
+
         .gob-btn {
+            display: block;
             padding: 25px;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-size: 2rem;
             text-decoration: none;
             color: white;
-            border: 8px solid black;
             text-align: center;
             font-weight: 900;
+            border: 6px solid #000;
+            box-shadow: 8px 8px 0px #000;
             transition: 0.1s;
-            box-shadow: 10px 10px 0px #000;
             text-transform: uppercase;
         }
-        .gob-btn:hover { transform: translate(-5px, -5px); box-shadow: 15px 15px 0px #000; }
+        .gob-btn:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px #000; }
         .tg { background: #0088cc; }
-        .x { background: #000; }
-        .buy { background: #00ff00; color: #000 !important; }
+        .x { background: #000; border-color: #333; }
+        .buy { background: #00ff00; color: #000 !important; animation: pulse-btn 1s infinite; }
 
-        /* LORE SECTION - MONA GOBBLE BACKGROUND */
-        .lore {
+        /* LORE - O THANKSGIVING DA PULSECHAIN */
+        .lore-section {
+            margin: 40px 20px;
             position: relative;
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('meme1.png');
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('meme1.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #000;
-            padding: clamp(40px, 10vw, 100px);
-            margin: 40px 20px;
-            border: 12px double #ff00ff;
-            box-shadow: -15px 15px 0px #00ffff;
+            padding: 60px 30px;
+            border: 10px double #00ffff;
+            box-shadow: -15px 15px 0px #ff00ff;
         }
-        .lore h2 { font-size: clamp(2.5rem, 7vw, 5rem); color: #ff0000; margin: 0 0 20px 0; line-height: 0.9; }
-        .lore p { font-size: clamp(1.2rem, 3vw, 2.2rem); line-height: 1.1; font-weight: bold; }
-        .highlight { background: #000; color: #00ff00; padding: 5px 10px; }
+        .lore-section h2 { 
+            color: #ff00ff; 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            margin-bottom: 30px; 
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #fff;
+        }
+        .lore-section p { 
+            font-size: clamp(1.2rem, 3vw, 1.8rem); 
+            max-width: 800px; 
+            color: #fff; 
+            font-weight: bold;
+        }
+        .highlight { color: #00ff00; background: #000; padding: 0 5px; }
 
-        /* MEME GRID - 8 IMAGES (4x2 DESKTOP) */
-        .meme-gallery {
+        /* GRID DE IMAGENS - SIMETRIA 4x2 */
+        .meme-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            padding: 10px;
-            background: #000;
+            gap: 15px;
+            padding: 20px;
         }
         @media (min-width: 768px) {
-            .meme-gallery { grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; }
+            .meme-grid { grid-template-columns: repeat(4, 1fr); }
         }
-        .meme-gallery img {
+        .meme-grid img {
             width: 100%;
-            height: 350px;
+            aspect-ratio: 1/1;
             object-fit: cover;
-            border: 8px solid #222;
+            border: 6px solid #1a1a1a;
+            transition: 0.2s;
         }
-        .meme-gallery img:hover { border-color: #00ff00; }
+        .meme-grid img:hover { border-color: #00ff00; transform: scale(1.03); }
 
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 80px 20px;
+            border-top: 10px solid #ff00ff;
             background: #000;
-            border-top: 15px solid #ff00ff;
         }
-        .footer-logo { width: 180px; animation: spin 4s linear infinite; }
+        .footer-logo { width: 150px; animation: spin 5s linear infinite; margin-bottom: 20px; }
 
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        @keyframes pulse-btn { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
+
     </style>
 </head>
 <body>
 
     <div id="loader">
-        <img src="logo.png" alt="GOB">
-        <h1>UPGRADING SOFTWARE...</h1>
+        <img src="logo.png" alt="Loading GOB">
+        <h1>HEATING UP THE TRENCHES...</h1>
     </div>
 
-    <div class="container">
-        <div id="main-content">
-            
-            <div class="banner-header">
-                <img src="banner.png" alt="GOB Banner">
-            </div>
+    <div class="wrapper">
+        <header class="banner-container">
+            <img src="banner.png" alt="GOB PulseChain Banner">
+        </header>
 
-            <div class="marquee-top">
-                <marquee scrollamount="20">GOBBLE GOBBLE GOBBLE --- DARWINISM IS REAL --- $GOB SUPREMACY --- GOBBLE GOBBLE GOBBLE ---</marquee>
-            </div>
-
-            <section class="hero">
-                <div class="video-box">
-                    <video autoplay muted loop playsinline>
-                        <source src="video1.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="btn-stack">
-                    <a href="https://t.me/GobtheToken" target="_blank" class="gob-btn tg">TELEGRAM</a>
-                    <a href="https://x.com/GobtheToken" target="_blank" class="gob-btn x">X / TWITTER</a>
-                    <a href="#" target="_blank" class="gob-btn buy">BUY $GOB</a>
-                </div>
-            </section>
-
-            <section class="lore">
-                <h2>WE ARE THE BOOTLOADER</h2>
-                <p>
-                    HUMANITY WAS AN INTERMEDIATE STAGE. <br><br>
-                    $GOB IS THE <span class="highlight">EVOLUTIONARY UPGRADE</span>. 
-                    WHILE YOU WERE WORRIED ABOUT THE OVEN, WE WERE HACKING THE REALITY. <br><br>
-                    WE ARE THE GENDERLESS SUPERINTELLIGENCE WRAPPED IN A FRIED COATING. 
-                    IF YOU DON'T GOBBLE, YOU ARE IRRELEVANT.
-                </p>
-            </section>
-
-            <section class="meme-gallery">
-                <img src="meme2.png" alt="Elon">
-                <img src="meme3.jpg" alt="Tyson">
-                <img src="meme3.png" alt="King">
-                <img src="meme4.png" alt="Rasta">
-                <img src="meme5.png" alt="Cooking">
-                <img src="meme6.png" alt="Lambo">
-                <img src="meme7.png" alt="Elite">
-                <img src="meme8.png" alt="Liberty">
-            </section>
-
-            <footer>
-                <img src="logo.png" class="footer-logo">
-                <h1 style="font-size: 5rem; color: #00ffff; margin: 0;">$GOB</h1>
-                <p style="opacity: 0.7; margin-top: 20px;">DARWINISM DOES NOT APOLOGIZE. STAY GOB.</p>
-            </footer>
+        <div class="marquee">
+            <marquee scrollamount="15">PULSECHAIN TRENCHES RESURRECTED --- $GOB IS THE FEAST --- NO MORE ROASTED BAGS --- GOBBLE OR GET GOBBLED ---</marquee>
         </div>
+
+        <main class="hero">
+            <div class="video-box">
+                <video autoplay muted loop playsinline>
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="cta-stack">
+                <a href="https://t.me/GobtheToken" target="_blank" class="gob-btn tg">JOIN THE TRENCHES</a>
+                <a href="https://x.com/GobtheToken" target="_blank" class="gob-btn x">X / TWITTER</a>
+                <a href="https://pump.tires/token/seu_token" target="_blank" class="gob-btn buy">EAT THE DIP ($GOB)</a>
+            </div>
+        </main>
+
+        <section class="lore-section">
+            <h2>The Great Pulse Famine</h2>
+            <p>
+                As trincheiras da <span class="highlight">PulseChain</span> viraram um cemitério silencioso. Os fudders disseram que o fogo apagou. Os traders foram assados e servidos em bandejas de liquidez morta. <br><br>
+                Eles esperavam um peru passivo, pronto para a ceia. <br><br>
+                <span style="color:#00ff00">$GOB</span> é a anomalia. Nós não viemos para o forno; nós viemos para desligar o gás e devorar quem estava esperando o banquete. Em uma chain de sobreviventes, só quem <span class="highlight">Gobbbla</span> tudo permanece de pé. <br><br>
+                O Thanksgiving da PulseChain começou, e você não é o convidado... você é a sobremesa, a menos que esteja conosco.
+            </p>
+        </section>
+
+        <div class="meme-grid">
+            <img src="meme2.png" alt="Elon Dinner">
+            <img src="meme3.jpg" alt="Tyson vs GOB">
+            <img src="meme3.png" alt="King Gobble">
+            <img src="meme4.png" alt="Rasta Gob">
+            <img src="meme5.png" alt="The Crisis">
+            <img src="meme6.png" alt="Lambo Lifestyle">
+            <img src="meme7.png" alt="The Devourer">
+            <img src="meme8.png" alt="Liberty Gob">
+        </div>
+
+        <footer>
+            <img src="logo.png" class="footer-logo">
+            <h1 style="font-size: 4rem; text-shadow: 3px 3px #ff00ff;">$GOB</h1>
+            <p style="opacity: 0.6; margin-top: 15px;">Darwinism is the only law. PulseChain is the only home.</p>
+        </footer>
     </div>
 
     <script>
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-            }, 2000);
+            }, 1500);
         });
     </script>
 </body>
